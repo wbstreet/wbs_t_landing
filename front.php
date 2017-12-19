@@ -60,7 +60,7 @@ if(function_exists('register_frontend_modfiles')) {
 		    <nav class="navbar navbar-default scrollMenu" role="navigation">
 			    <div class="navbar-header">
 				    <button type="button" class="navbar-toggle" data-toggle=".collapse" data-target=".navbar-ex1-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-				    <a class="navbar-brand" href="<?php echo WB_URL; ?>/"><img src="<?php echo WB_URL; ?>/media/img/logo.png" alt="<?php echo WEBSITE_TITLE; ?>" title="<?php echo WEBSITE_TITLE; ?>"></a>
+				    <a class="navbar-brand" href="<?php echo WB_URL; ?>/"><img src="<?php echo WB_URL; ?>/media/common_img/logo.png" alt="<?php echo WEBSITE_TITLE; ?>" title="<?php echo WEBSITE_TITLE; ?>"></a>
 			    </div>
 			    <div class="collapse navbar-collapse navbar-ex1-collapse" id="scrollTarget" style='text-align:right;'>
 				    <ul class="nav navbar-nav pull-right">
