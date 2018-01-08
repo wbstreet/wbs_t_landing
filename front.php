@@ -23,19 +23,13 @@ if(function_exists('register_frontend_modfiles')) {
 
 <!-- Bootstrap -->
 <link href="<?php echo TEMPLATE_DIR; ?>/css/bootstrap.min.css" rel="stylesheet">
-<link href="<?php echo TEMPLATE_DIR; ?>/css/responsive-slider.css" rel="stylesheet">
 <!--link href="<?php echo TEMPLATE_DIR; ?>/css/animate.css" rel="stylesheet"-->
 <link href="<?php echo TEMPLATE_DIR; ?>/css/font-awesome.min.css" rel="stylesheet">
   
     <link rel="stylesheet" type="text/css" media="all" href="<?php echo TEMPLATE_DIR; ?>/css/styles.css">
     <script type="text/javascript" src="<?php echo TEMPLATE_DIR; ?>/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="<?php echo TEMPLATE_DIR; ?>/js/responsiveCarousel.js"></script>
 
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
-
-    <!-- third party plugins  -->
-    <!--<script type="text/javascript" src="<?php echo TEMPLATE_DIR; ?>/js/bootstrap.js"></script>-->
-    <!--script type="text/javascript" src="<?php echo TEMPLATE_DIR; ?>/js/jquery.easing.1.3.js"></script-->
 
     <link href="<?php echo TEMPLATE_DIR; ?>/editor.css" rel="stylesheet">
     <link href="<?php echo TEMPLATE_DIR; ?>/template.css" rel="stylesheet">
@@ -48,6 +42,8 @@ if(function_exists('register_frontend_modfiles')) {
     <?php if(function_exists('wbs_core_include')) wbs_core_include(['functions.js', 'windows.js', 'windows.css']); ?>
     <?php require_once(WB_PATH.'/include/captcha/captcha.php'); ?>
 
+    <?php if(function_exists('wbs_core_include')) wbs_core_include(['slick-1.8.0/slick/slick.css', 'slick-1.8.0/slick/slick-theme.css'], true); ?>
+    
 </head>
 <body data-spy="scroll" data-target="#scrollTarget" data-offset="150" style="overflow: visible;">
     <!-- Primary Page Layout 
@@ -76,56 +72,21 @@ if(function_exists('register_frontend_modfiles')) {
 
     <!-- header -->
 
-	
-<?php 
-if ($isstartpage) {
+    <?php echo $alloutput; ?>
 
-	$slider_page_ids = '1';
-	$slider_image_base = WB_URL.'/media/slide/slide'; // added: number + .jpg
-	include('snippets/responsiveslides.php');
-//	include('snippets/top-grids.php');
-	
-//	include('snippets/2col-intro.php');
-//	include('snippets/parallax.php');
-//	include('snippets/form.php');
-//	include('chat/chat.php');
-}
-
-
-echo $alloutput; 
-?>
-
-<footer>
+    <footer>
 	<?php if (function_exists('echo_creator')) echo_creator();?>
-</footer>
-</div><!-- global wrapper -->
+    </footer>
 <!-- End Document 
 ================================================== -->
 
+    <script type="text/javascript" src="<?php echo TEMPLATE_DIR; ?>/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    <script type="text/javascript" src="<?php echo TEMPLATE_DIR; ?>/js/jquery.localscroll-1.2.7-min.js"></script>
+    <script type="text/javascript" src="<?php echo TEMPLATE_DIR; ?>/js/template.js"></script>
 
-
-<script type="text/javascript" src="<?php echo TEMPLATE_DIR; ?>/js/jquery.scrollTo-1.4.3.1-min.js"></script>
-<script type="text/javascript" src="<?php echo TEMPLATE_DIR; ?>/js/jquery.localscroll-1.2.7-min.js"></script>
-<script type="text/javascript" src="<?php echo TEMPLATE_DIR; ?>/js/template.js"></script>
-
-<!-- Для слайдера -->
-<script src="<?php echo WB_URL; ?>/include/added_js/responsiveslides.min.js"></script>
-
-<script type="text/javascript">
-$(function(){
-  $('.crsl-items').carousel({
-    visible: 4,
-    itemMinWidth: 180,
-    itemEqualHeight: 370,
-    itemMargin: 9,
-  });
-  
-  $("a[href=#]").on('click', function(e) {
-    e.preventDefault();
-  });
-});
-$(document).ready(function() {
-  $("[data-toggle]").click(function() {
+    <script type="text/javascript">
+    $(document).ready(function() {
+$("[data-toggle]").click(function() {
     var toggle_el = $(this).data("toggle");
     $(toggle_el).fadeToggle();
   });
@@ -142,11 +103,23 @@ $(window).resize(function() {
         marginTop: 'calc('+getComputedStyle($('header')[0]).height+' - 30px)'
     });
 });
-</script>
+    </script>
 
+    <?php if(function_exists('wbs_core_include')) wbs_core_include(['slick-1.8.0/slick/slick.min.js'], true); ?>
+    <script>
 
+$(document).ready(function(){
+
+  $('.slick_slider').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000
+  });
+
+});
+
+    </script>
 
 </body></html>
-
-</body>
-</html>
