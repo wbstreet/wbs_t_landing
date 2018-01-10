@@ -80,10 +80,12 @@ if(function_exists('register_frontend_modfiles')) {
 <!-- End Document 
 ================================================== -->
 
-    <script type="text/javascript" src="<?php echo TEMPLATE_DIR; ?>/js/jquery.scrollTo-1.4.3.1-min.js"></script>
-    <script type="text/javascript" src="<?php echo TEMPLATE_DIR; ?>/js/jquery.localscroll-1.2.7-min.js"></script>
+    <?php if(function_exists('wbs_core_include')) wbs_core_include(['jquery.scrollTo-2.1.2/jquery.scrollTo.min.js'], true); ?>
+    <?php if(function_exists('wbs_core_include')) wbs_core_include(['jquery.localScroll-2.0.0/jquery.localScroll.min.js'], true); ?>
     <script type="text/javascript" src="<?php echo TEMPLATE_DIR; ?>/js/template.js"></script>
+    <?php if(function_exists('wbs_core_include')) wbs_core_include(['slick-1.8.0/slick/slick.min.js'], true); ?>
 
+    
     <script type="text/javascript">
     $(document).ready(function() {
 $("[data-toggle]").click(function() {
@@ -103,10 +105,6 @@ $(window).resize(function() {
         marginTop: 'calc('+getComputedStyle($('header')[0]).height+' - 30px)'
     });
 });
-    </script>
-
-    <?php if(function_exists('wbs_core_include')) wbs_core_include(['slick-1.8.0/slick/slick.min.js'], true); ?>
-    <script>
 
 $(document).ready(function(){
 
