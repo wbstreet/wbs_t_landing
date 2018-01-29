@@ -39,7 +39,7 @@ if(function_exists('register_frontend_modfiles')) {
     <meta name="HandheldFriendly" content="true" />
     <meta name="MobileOptimized" content="320" />
 
-    <?php if(function_exists('wbs_core_include')) wbs_core_include(['functions.js', 'windows.js', 'windows.css']); ?>
+    <?php if(function_exists('wbs_core_include')) wbs_core_include(['functions.js', 'windows.js', 'windows.css', 'effects.css']); ?>
     <?php require_once(WB_PATH.'/include/captcha/captcha.php'); ?>
 
     <?php if(function_exists('wbs_core_include')) wbs_core_include(['slick-1.8.0/slick/slick.css', 'slick-1.8.0/slick/slick-theme.css'], true); ?>
@@ -80,7 +80,8 @@ if(function_exists('register_frontend_modfiles')) {
 <!-- End Document 
 ================================================== -->
 
-    <?php if(function_exists('wbs_core_include')) wbs_core_include(['jquery.scrollTo-2.1.2/jquery.scrollTo.min.js'], true); ?>
+    <?php if(function_exists('wbs_core_include')) wbs_core_include(['jquery.scrollTo-2.1.2/jquery.scrollTo.min.js'], true); ?>
+
     <?php if(function_exists('wbs_core_include')) wbs_core_include(['jquery.localScroll-2.0.0/jquery.localScroll.min.js'], true); ?>
     <script type="text/javascript" src="<?php echo TEMPLATE_DIR; ?>/js/template.js"></script>
     <?php if(function_exists('wbs_core_include')) wbs_core_include(['slick-1.8.0/slick/slick.min.js'], true); ?>
