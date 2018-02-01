@@ -118,7 +118,7 @@ $(document).ready(function(){
   });
 
 });
-
+    let g = new Gallery(document.querySelectorAll('.fm'));
     </script>
 
 </body></html>
