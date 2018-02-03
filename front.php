@@ -75,6 +75,7 @@ if(function_exists('register_frontend_modfiles')) {
     <?php echo $alloutput; ?>
 
     <footer>
+        <?php if (defined('CUSTOMSETTINGS_COUNTERS')) echo CUSTOMSETTINGS_COUNTERS; ?>
 	<?php if (function_exists('echo_creator')) echo_creator();?>
     </footer>
 <!-- End Document 
@@ -118,7 +119,8 @@ $(document).ready(function(){
   });
 
 });
-    let g = new Gallery(document.querySelectorAll('.fm'));
+    let g = new Gallery(document.querySelectorAll('.fm'));
+
     </script>
 
 </body></html>
